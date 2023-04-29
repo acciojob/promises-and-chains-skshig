@@ -36,22 +36,19 @@ let myAge = document.getElementById('age');
 
 //    document.getElementById('btn').addEventListener('click',console.log("btn clicked"));
    function btnClicked(){
-    console.log("btn is clicked")
      let myPromise = new Promise(function(resolve,reject){
         setTimeout(()=>{
                if(myAge.value >= 18){
                 console.log("age over 18")
                    resolve("hi");}
                else{
-                   reject("Oh sorry" +myName.value + "You aren't old enough");
+                   reject("age < 18");
                    }
-           })
-       },4000)
-       myPromise.then((response)=>{
-        console.log("then part")
-           document.getElementById('display').innerHTML = "Welcome" +myName.value+"You can vote";
+           },4000)
        })
-       myPromise.catch((e)=>{
+       myPromise.then((response)=>{
+           document.getElementById('display').innerHTML = "Welcome" +myName.value+"You can vote";
+       }).catch((e)=>{
         document.getElementById('display').innerHTML = "Oh sorry" + myName.value + "You aren't old enough";
        });
     }
