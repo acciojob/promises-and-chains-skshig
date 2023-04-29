@@ -8,7 +8,7 @@
 </head>
 <body>
      <!-- write the body here -->
-    <form action="">
+    <form action="" onsubmit="return false">
       <label for="age"></label>
       <input type="number" name="age" id="age" placeholder="age" required>
 
@@ -16,7 +16,7 @@
       <input type="text" name="name" id="name" placeholder="name" required>
 
       <label for="btn"></label>
-      <input type="button" name="btn" id="btn" value="Submit" onclick="btnClicked()">
+      <input type="submit" name="btn" id="btn" onclick="btnClicked()">
     </form>
     <div id="display">
       
